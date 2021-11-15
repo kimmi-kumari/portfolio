@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Blogs Demo</title>
+    <title>Blog POC</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -17,7 +17,6 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Favicons -->
-<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#7952b3">
 
 
@@ -50,9 +49,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-              <a class="nav-link active" aria-current="page" href="#">Twitter</a>
-              <a class="nav-link" href="{% static 'testdoc.pdf' %}">Resume</a>
-              <a class="nav-link" href="{% url 'allBlogs' %}">Blogs</a>
+              <a class="nav-link" aria-current="page" href="#">Twitter</a>
+              <a class="nav-link" href="#">Resume</a>
+              <a class="nav-link active" href="{% url 'allBlogs' %}">Blogs</a>
             </div>
           </div>
         </div>
@@ -60,35 +59,12 @@
 </header>
 
 <main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hi!, I am Kimmi</h1>
-        <p class="lead text-muted">Hey I love coding</p>
-        <p>
-          <a href="mailto:kimmii.kumari@gmail.com" class="btn btn-primary my-2">Email me</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for job in jobs %}
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <img class="card-img-top" src={{ job.image.url }} />
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+        <h1 class="text-center pt-3">{{blog.title}}</h1>
+        <hr />
+
+        <p>{{blog.body}}</p>
     </div>
-  </div>
 
 </main>
 

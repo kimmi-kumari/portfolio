@@ -6,5 +6,11 @@ from django.db.models.fields.files import ImageField
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     pub_date = models.DateField()
-    body = models.CharField(max_length=200)
+    body = models.TextField()
     image = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.title
+        
+    def summary(self):
+        return self.body[:100]
